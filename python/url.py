@@ -10,7 +10,7 @@ Example: ./url.py http://ooxx.com 1
 @notice The request page shoud be print the next url, like "forward:http://ooxx.com" ,or the mission will be stop!
 @author Cookie Chen
 @update 2014-12-12
-For more information : 
+For more information : https://github.com/chenshangwei/script/blob/master/python/url.py
 '''
 
 PREFIX = "forward:"
