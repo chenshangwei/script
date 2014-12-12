@@ -3,6 +3,7 @@
 # url.py
 # 脚本：跳转的计划任务
 # script ：The planning task for jump
+# Linux下的计划任务python脚本，模拟浏览器中的js跳转。
 import urllib2,time,sys,re
 
 help = '''usage : ./url.py url [sleep] 
