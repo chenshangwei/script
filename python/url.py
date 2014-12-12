@@ -2,6 +2,7 @@
 #-*- coding:utf-8 -*-
 # url.py
 # 脚本：跳转的计划任务
+# script ：The planning task for jump
 import urllib2,time,sys,re
 
 help = '''usage : ./url.py url [sleep] 
