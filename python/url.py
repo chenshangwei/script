@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+#-*- coding:utf-8 -*-
+# url.py
+# 脚本：跳转的计划任务
+# author chenshangwei
+import urllib2,time,sys,re
+
+help = '''usage : ./url.py url [sleep] 
+Example: ./url.py http://ooxx.com 1
+@author Cookie Chen
+@update 2014-12-12
+For more information : 
+'''
+
+PREFIX = "forward:"
+link = ''
+sleep = 0
+count = 1
+start_time = time.time()
+
+try:
+    link = sys.argv[1]
+    sleep = int(sys.argv[2])
+except IndexError,e:
+    pass
+
+def getUrl(link,sleep):
+    global count
+    print "[executing] " + link
+    result = urllib2.urlopen(link).read()
+    if result.startswith(PREFIX):
+        next_url = result.lstrip(PREFIX)
+        if sleep > 0 :
+            time.sleep(sleep)
+        count+= 1
+        getUrl(next_url,sleep)
+
+if __name__ == '__main__':
+    try:
+        if link.startswith('http:'):
+            getUrl(link,sleep)
+            spend_time = time.time() - start_time
+            print 'Mission Complished!'
+            print "Spend time : %.2fs,Execution times : %d " % (spend_time,count)
+        else:
+            print help
+            sys.exit(-1)
+    except (KeyboardInterrupt, SystemExit):
+        pass
