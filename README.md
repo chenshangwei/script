@@ -1,4 +1,1 @@
-shell-config
-============
-
-shell and config
+some script write by myself
