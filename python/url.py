@@ -2,11 +2,11 @@
 #-*- coding:utf-8 -*-
 # url.py
 # 脚本：跳转的计划任务
-# author chenshangwei
 import urllib2,time,sys,re
 
 help = '''usage : ./url.py url [sleep] 
 Example: ./url.py http://ooxx.com 1
+@notice The request page shoud be print the next url, like "forward:http://ooxx.com" ,or the mission will be stop!
 @author Cookie Chen
 @update 2014-12-12
 For more information : 
