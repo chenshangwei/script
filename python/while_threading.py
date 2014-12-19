@@ -12,7 +12,7 @@ help = '''usage : nohup ./while_theading.py &
 @notice Before use，please configure the "config",and make sure that urls are ok!
 @author Cookie Chen
 @update 2014-12-12
-For more information : 
+For more information : https://github.com/chenshangwei/script/blob/master/python/while_threading.py
 '''
 config = [
         {'url':'http://xxoo.com/test/test1','sleep':1},
