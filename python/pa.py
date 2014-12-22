@@ -109,7 +109,7 @@ def down(pic_url,id):
     
 def save(title,singer,pic_file,type):
     '''MYSQL保存数据'''
-    conn = MySQLdb.connect(host='42.121.84.74',user='music',passwd='fbb24fe2154b39',db='music',port=3306,charset='utf8')    
+    conn = MySQLdb.connect(host='',user='',passwd='',db='',port=3306,charset='utf8')    
     cursor = conn.cursor()
     sql = "insert into m_gtp_tmp(title,singer,pic_file,type) values(%s,%s,%s,%s)"
     n = cursor.execute(sql,(title,singer,pic_file,type))
