@@ -9,7 +9,7 @@ import threading
 import signal
 
 def getUrl(url,times,worker):
-    global threadlock,error_nums,task,event,workers
+    global threadlock1,threadlock2,error_nums,task,event,workers
     print '[Mission start][worker]',worker,'-',url,'-',times
     j = 0
     while j < times:
@@ -17,19 +17,20 @@ def getUrl(url,times,worker):
         try:
             urllib2.urlopen(url)
         except Exception,e:
-            threadLock.acquire()
+            threadLock1.acquire()
             error_nums = error_nums + 1 #异常次数
-            threadLock.release()
+            threadLock1.release()
         j = j + 1
-    threadLock.acquire()
+    threadLock2.acquire()
     task = task + 1 #任务完成次数
-    threadLock.release()
+    threadLock2.release()
     if task >= workers: #任务都完成，通知主线程结束
        event.set()
 
 if __name__ == '__main__':
     error_nums = 0
-    threadLock = threading.Lock()
+    threadLock1 = threading.Lock()
+    threadLock2 = threading.Lock()
     event = threading.Event()
     workers = times = 1
     start_time = time.time()
