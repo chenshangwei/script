@@ -3,6 +3,7 @@
 # while_threading.py
 # 秒级计划任务 多线程实现
 # script ：Second plan task,by threading
+# 配合check_while.sh脚本使用效果更好，可以避免机器重启，任务未开启的情况
 import urllib2,time,sys,os
 import threading
 import signal
