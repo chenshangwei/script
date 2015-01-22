@@ -17,7 +17,7 @@ For more information : https://github.com/chenshangwei/script/blob/master/python
 PREFIX = "forward:"
 link = ''
 sleep = 0
-count = 1
+count = 0
 start_time = time.time()
 
 try:
