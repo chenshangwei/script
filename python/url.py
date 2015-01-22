@@ -29,13 +29,17 @@ except IndexError,e:
 def getUrl(link,sleep):
     global count
     print "[executing] " + link
-    result = urllib2.urlopen(link).read()
-    if result.startswith(PREFIX):
-        next_url = result.lstrip(PREFIX)
-        if sleep > 0 :
-            time.sleep(sleep)
-        count+= 1
-        getUrl(next_url,sleep)
+    try:
+        result = urllib2.urlopen(link).read()
+        if result.startswith(PREFIX):
+            next_url = result.lstrip(PREFIX)
+            if sleep > 0 :
+               time.sleep(sleep)
+            count+= 1
+            getUrl(next_url,sleep)
+    except e:
+        print "Something wrong! Check it!"
+        pass
 
 if __name__ == '__main__':
     try:
