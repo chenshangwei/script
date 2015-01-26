@@ -26,7 +26,10 @@ def getUrl(url,sleep):
     print '[Mission start] ','-',url,'-',sleep
     while True:
         print time.ctime(),'[Runing] ',url,' ',sleep
-        urllib2.urlopen(url,timeout=time_out)
+        try:
+            urllib2.urlopen(url,timeout=time_out)
+        except e:
+            pass
         if sleep > 0:
             time.sleep(sleep)
 
