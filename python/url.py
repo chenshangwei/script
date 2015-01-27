@@ -37,7 +37,7 @@ def getUrl(link,sleep):
                time.sleep(sleep)
             count+= 1
             getUrl(next_url,sleep)
-    except e:
+    except Exception,e:
         print "Something wrong! Check it!"
         pass
 
