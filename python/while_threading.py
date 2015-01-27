@@ -20,14 +20,14 @@ config = [
         {'url':'http://xxoo.com/test/test2','sleep':2},
         {'url':'http://xxoo.com/test/test3','sleep':3},
 ]
-time_out = 5 #0为不超时
+#time_out = 5 #0为不超时
 
 def getUrl(url,sleep):
     print '[Mission start] ','-',url,'-',sleep
     while True:
         print time.ctime(),'[Runing] ',url,' ',sleep
         try:
-            urllib2.urlopen(url,timeout=time_out)
+            urllib2.urlopen(url)
         except Exception,e:
             pass
         if sleep > 0:
