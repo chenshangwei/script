@@ -28,7 +28,7 @@ def getUrl(url,sleep):
         print time.ctime(),'[Runing] ',url,' ',sleep
         try:
             urllib2.urlopen(url,timeout=time_out)
-        except e:
+        except Exception,e:
             pass
         if sleep > 0:
             time.sleep(sleep)
