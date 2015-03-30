@@ -15,9 +15,11 @@ For more information : https://github.com/chenshangwei/script/blob/master/python
 '''
 
 PREFIX = "forward:"
+ERROR_MAX = 50 #错误(重试)次数超过 则停止
 link = ''
 sleep = 0
 count = 0
+error = 0
 start_time = time.time()
 
 try:
@@ -28,7 +30,10 @@ except IndexError,e:
 
 def getUrl(link,sleep):
     global count
+    global error
     while True:
+        if error > ERROR_MAX:
+            break
         print "[executing] " + link
         try:
             result = urllib2.urlopen(link).read()
@@ -40,8 +45,10 @@ def getUrl(link,sleep):
             elif result == 'ok':
                 break
             else:
+                error+= 1
                 pass #重新尝试
         except Exception,e:
+            error+= 1
             pass #重新尝试
 """ 递归方式效率太低，更换while方式
 def getUrl(link,sleep):
