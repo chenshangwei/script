@@ -25,10 +25,14 @@ FTP_DIR = ''
 
 MYSQL_PORT = 3306
 MYSQL_PREFIX = '/usr/local/mysql/' 
-MYSQL_DATA_DIR = '/data/mysql1'                                                                                                          
+MYSQL_DATA_DIR = '/data/mysql1/'                                                                                                          
 
 TMP_DIR = '/data/backup/'
 EXCLUDE_DIR = ['mysql','test','log']
 INNODB_FILE = ['ibdata1','ib_logfile0','ib_logfile1']
 
-
+logging.basicConfig(level=logging.INFO,
+                format='%(asctime)s %(message)s',
+                datefmt='%Y %b %d  %H:%M:%S',
+                filename='/var/log/backup_db.log',
+                filemode='ab')
