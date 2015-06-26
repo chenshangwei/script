@@ -21,6 +21,7 @@ IS_TAR_GZ = False  # False OR True
 FTP_HOST = ''
 FTP_NAME = ''
 FTP_PWD = ''
+FTP_DIR = ''
 
 MYSQL_PORT = 3306
 MYSQL_PREFIX = '/usr/local/mysql/' 
