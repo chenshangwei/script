@@ -45,7 +45,7 @@ if __name__ == '__main__':
 
     signal.signal(signal.SIGINT,lambda *args: event.set())
     signal.signal(signal.SIGTERM,lambda *args: event.set())
-    signal.signal(signal.SIGKILL,lambda *args: event.set())
+    #signal.signal(signal.SIGKILL,lambda *args: event.set())
 
     while not event.isSet():
         #if threading.activeCount() == 1: #任务线程全部结束，退出
