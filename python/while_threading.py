@@ -48,8 +48,8 @@ if __name__ == '__main__':
     signal.signal(signal.SIGKILL,lambda *args: event.set())
 
     while not event.isSet():
-        if threading.activeCount() == 1: #任务线程全部结束，退出
-            break
+        #if threading.activeCount() == 1: #任务线程全部结束，退出
+        #    break
         time.sleep(60)
         
     print 'Task quit!'
