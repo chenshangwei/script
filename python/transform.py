@@ -3,7 +3,7 @@
 
 '''
 音频转换 amr ===> mp3
-需要安装ffmpeg python-redis包
+需要安装ffmpeg & python-redis包
 usage : nohup python transform.py &
 '''
 __author__ =  'cookieChen https://github.com/chenshangwei/'
