@@ -7,7 +7,7 @@
 import urllib2,time,sys,re
 
 help = '''usage : ./url.py url [sleep] 
-Example: ./url.py "http://ooxx.com" 1 #第2个参数，请加引号
+Example: ./url.py "http://ooxx.com" 1 #url参数，请加引号
 @notice The request page shoud be print the next url, like "forward:http://ooxx.com" ,or the mission will be stop!
 @author Cookie Chen
 @update 2014-12-12
