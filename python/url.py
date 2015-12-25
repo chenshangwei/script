@@ -50,22 +50,7 @@ def getUrl(link,sleep):
         except Exception,e:
             error+= 1
             pass #重新尝试
-""" 递归方式效率太低，更换while方式
-def getUrl(link,sleep):
-    global count
-    print "[executing] " + link
-    try:
-        result = urllib2.urlopen(link).read()
-        if result.startswith(PREFIX):
-            next_url = result.lstrip(PREFIX)
-            if sleep > 0 :
-               time.sleep(sleep)
-            count+= 1
-            getUrl(next_url,sleep)
-    except Exception,e:
-        print "Something wrong! Check it!"
-        pass
-"""
+
 if __name__ == '__main__':
     try:
         if link.startswith('http:'):
