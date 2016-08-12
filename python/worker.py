@@ -16,7 +16,7 @@ WORKER_URL = "http://ooxx.com/cron/handle"   #任务工作地址，子线程使�
 SIGNAL_URL = "http://ooxx.com/cron/queue_size"   #接受任务通知，主线程使用
 
 MAX_WORKER = 20 #最大工作线程
-MAX_ERROR = 10 # 任务异常超过MAX_ERROR,则退出任务
+MAX_ERROR = 10 # 任务异常超过MAX_ERROR,则退出单次任务
 
 def getUrl(link):
     error = 0
